@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace ThreeTierExample
 {
-    public partial class Form1 : Form
+    public partial class MDIemployee : Form
     {
-        public Form1()
+        public MDIemployee()
         {
             InitializeComponent();
         }
