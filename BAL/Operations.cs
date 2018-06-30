@@ -20,7 +20,7 @@ namespace BAL
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "insert into empdata (Name,Gender,DOB,Address,Education,Username,Password,MobileNo) values ('" + info.name + "','" + info.gender + "','" + info.dob + "','" + info.address + "','" + info.education + "','" + info.username + "','" + info.password + "','" + info.mobilenum + "') ";
+            cmd.CommandText = "insert into empdata (Name,Gender,DOB,Address,Education,Username,Password,MobileNo,Usertype) values ('" + info.name + "','" + info.gender + "','" + info.dob + "','" + info.address + "','" + info.education + "','" + info.username + "','" + info.password + "','" + info.mobilenum + "','user') ";
             return db.ExcelNonQuery(cmd);
         }
 

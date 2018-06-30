@@ -17,6 +17,7 @@ namespace ThreeTierExample
         public Operations opr = new Operations();
         DataTable dt = new DataTable();
         private bool v;
+        public String utype;
 
         public Login()
         {
@@ -25,7 +26,7 @@ namespace ThreeTierExample
 
         public Login(bool v)
         {
-            // this.v = v;
+             this.v = v;
             InitializeComponent();
             btnReg.Visible = v;
         }
@@ -37,18 +38,37 @@ namespace ThreeTierExample
 
            dt =  opr.login(info);
 
-            if(dt.Rows.Count>0)
+            if (dt.Rows.Count > 0)
             {
-                this.Hide();
-                MDIemployee mde = new MDIemployee();
-                mde.Show();
+                utype = dt.Rows[0][9].ToString().Trim();
+                if (utype == "Admin")
+                {
+                    this.Hide();
+                    MDIadmin mdi = new MDIadmin();
+                    mdi.Show();
+                }
+                else
+                {
+                    this.Hide();
+                    MDIemployee mde = new MDIemployee();
+                    mde.Show();
+                }
             }
+
+            else
+            {
+                MessageBox.Show("Invalid Username or Password");
+            }
+                
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Register reg = new Register();
             reg.Show();
         }
     }
 }
+
