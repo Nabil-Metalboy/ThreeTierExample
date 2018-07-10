@@ -27,13 +27,14 @@ namespace ThreeTierExample
             MessageBox.Show("Do You Want To Go Back To Home Page", "Return Home",
                 MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             sd.Hide();
-
+            
         }
 
         private void stockToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
             sd.Show();
+            
             
         }
     }
