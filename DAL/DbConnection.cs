@@ -54,5 +54,19 @@ namespace DAL
             con.Close();
             return dt;
         }
+
+        public SqlDataReader getReader(SqlCommand cmd)
+        {
+            cmd.Connection = getcon();
+            //SqlDataAdapter sdr;
+            //DataTable dt = new DataTable();
+            SqlDataReader sdr = cmd.ExecuteReader();
+            //dt.Load(sdr);
+            con.Close();
+            return sdr;
+        }
+
+        
+
     }
 }

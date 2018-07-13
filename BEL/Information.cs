@@ -16,5 +16,7 @@ namespace BEL
         public string mobilenum { get; set; }
         public string username { get; set; }
         public string password  { get; set; }
+        public string item_name { get; set; }
+        public string unit { get; set; }
     }
 }

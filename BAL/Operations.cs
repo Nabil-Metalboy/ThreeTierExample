@@ -24,6 +24,16 @@ namespace BAL
             return db.ExcelNonQuery(cmd);
         }
 
+        public SqlDataReader StockView()
+        {
+            //throw new NotImplementedException();
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select ItemName,Piece from Item_Details";
+
+            return db.getReader(cmd);
+        }
+
         public DataTable login(Information info)
         {
             SqlCommand cmd = new SqlCommand();
