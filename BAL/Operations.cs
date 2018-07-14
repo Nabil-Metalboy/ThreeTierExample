@@ -24,12 +24,21 @@ namespace BAL
             return db.ExcelNonQuery(cmd);
         }
 
+        //public DataTable StockView()
+        //{
+        //    SqlCommand cmd = new SqlCommand();
+        //   cmd.CommandType = CommandType.Text;
+        //       cmd.CommandText = "select * from Item_Details";
+        //    return db.ExReader(cmd);
+        //}
+
         public SqlDataReader StockView()
         {
             //throw new NotImplementedException();
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select ItemName,Piece from Item_Details";
+            cmd.CommandText = "select * from ITEMDetailsLocation";
+
 
             return db.getReader(cmd);
         }

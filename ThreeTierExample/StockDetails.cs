@@ -18,6 +18,7 @@ namespace ThreeTierExample
         //public Information info = new Information();
         public Operations opr = new Operations();
         public SqlDataReader sd ;
+         
 
         public StockDetails()
         {
@@ -26,13 +27,24 @@ namespace ThreeTierExample
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
+           
+        }
+
+       
+
+        private void StockDetails_Load(object sender, EventArgs e)
+        {
             sd = opr.StockView();
-            while (sd.Read())
+            while(sd.Read())
             {
-                ListViewItem lv = new ListViewItem(sd[1].ToString());
+                ListViewItem lv = new ListViewItem(sd[0].ToString());
                 lv.SubItems.Add(sd[1].ToString());
-                lv.SubItems.Add(sd[1].ToString());
+                lv.SubItems.Add(sd[2].ToString());
+                lv.SubItems.Add(sd[3].ToString());
+                lv.SubItems.Add(sd[4].ToString());
+                listView1.Items.Add(lv);
             }
+
         }
     }
 }

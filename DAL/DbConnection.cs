@@ -62,7 +62,7 @@ namespace DAL
             //DataTable dt = new DataTable();
             SqlDataReader sdr = cmd.ExecuteReader();
             //dt.Load(sdr);
-            con.Close();
+            //con.Close();
             return sdr;
         }
 
