@@ -15,7 +15,7 @@ namespace ThreeTierExample
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MDIemployee());
+            Application.Run(new MDIadmin());
         }
     }
 }
