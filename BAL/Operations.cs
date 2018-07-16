@@ -24,7 +24,13 @@ namespace BAL
             return db.ExcelNonQuery(cmd);
         }
 
-        
+        public DataTable StockInTransfer()
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select * from ITEMDetailsLocation";
+            return db.ExReader(cmd);
+        }
 
         public SqlDataReader StockView()
         {

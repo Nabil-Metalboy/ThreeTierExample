@@ -24,7 +24,7 @@ namespace ThreeTierExample
             {
                 sd = new StockDetails();
                 sd.MdiParent = this;
-                sd.FormClosed += Sd_FormClosed;
+                sd.FormClosed += tw_FormClosed;
                 sd.Show();
             }
 
@@ -42,16 +42,17 @@ namespace ThreeTierExample
         {
             MessageBox.Show("Do You Want To Go Back To Home Page", "Return Home",
                MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            sd.Dispose();
-            tw.Dispose();
+            if (sd == null || tw == null)
+            {
+                sd.ShowDialog();
+                tw.ShowDialog();
+            }
+            else
+                sd.Close();
+                tw.Close();
         }
 
-        private void Sd_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            sd = null;
-            tw = null;
-            //throw new NotImplementedException();
-        }
+        
 
         private void transferToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -59,7 +60,7 @@ namespace ThreeTierExample
             {
                 tw = new Transfer_Window();
                 tw.MdiParent = this;
-                tw.FormClosed += Sd_FormClosed;
+                tw.FormClosed += tw_FormClosed;
                 tw.Show();
             }
 
@@ -68,6 +69,19 @@ namespace ThreeTierExample
                 tw.Activate();
             }
             //sd.Dispose();
+        }
+
+        private void sd_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //sd = null;
+            //tw = null;
+            //throw new NotImplementedException();
+        }
+        private void tw_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //tw = null;
+            //tw = null;
+            //throw new NotImplementedException();
         }
     }
 }
