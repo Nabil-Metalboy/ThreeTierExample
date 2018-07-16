@@ -42,6 +42,7 @@ namespace ThreeTierExample
                 lv.SubItems.Add(sd[2].ToString());
                 lv.SubItems.Add(sd[3].ToString());
                 lv.SubItems.Add(sd[4].ToString());
+                lv.SubItems.Add(sd[5].ToString());
                 listView1.Items.Add(lv);
             }
 

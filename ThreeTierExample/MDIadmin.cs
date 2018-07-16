@@ -12,6 +12,7 @@ namespace ThreeTierExample
     public partial class MDIadmin : Form
     {
         StockDetails sd;
+        Transfer_Window tw;
         public MDIadmin()
         {
             InitializeComponent();
@@ -31,6 +32,7 @@ namespace ThreeTierExample
             {
                 sd.Activate();
             }
+           // tw.Dispose();
 
         }
 
@@ -40,13 +42,32 @@ namespace ThreeTierExample
         {
             MessageBox.Show("Do You Want To Go Back To Home Page", "Return Home",
                MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            sd.Close();
+            sd.Dispose();
+            tw.Dispose();
         }
 
         private void Sd_FormClosed(object sender, FormClosedEventArgs e)
         {
             sd = null;
+            tw = null;
             //throw new NotImplementedException();
+        }
+
+        private void transferToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tw == null)
+            {
+                tw = new Transfer_Window();
+                tw.MdiParent = this;
+                tw.FormClosed += Sd_FormClosed;
+                tw.Show();
+            }
+
+            else
+            {
+                tw.Activate();
+            }
+            //sd.Dispose();
         }
     }
 }

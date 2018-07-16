@@ -34,6 +34,7 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // listView1
@@ -44,7 +45,8 @@
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4,
-            this.columnHeader5});
+            this.columnHeader5,
+            this.columnHeader6});
             this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listView1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView1.GridLines = true;
@@ -66,23 +68,28 @@
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "Item Name";
+            this.columnHeader2.Text = "Manuf. Name";
             this.columnHeader2.Width = 115;
             // 
             // columnHeader3
             // 
-            this.columnHeader3.Text = "Carton";
+            this.columnHeader3.Text = "Item Name";
             this.columnHeader3.Width = 99;
             // 
             // columnHeader4
             // 
-            this.columnHeader4.Text = "Piece";
+            this.columnHeader4.Text = "Carton";
             this.columnHeader4.Width = 85;
             // 
             // columnHeader5
             // 
-            this.columnHeader5.Text = "Location";
+            this.columnHeader5.Text = "Piece";
             this.columnHeader5.Width = 114;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Location";
+            this.columnHeader6.Width = 117;
             // 
             // StockDetails
             // 
@@ -106,5 +113,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
     }
 }
