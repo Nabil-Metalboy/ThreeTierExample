@@ -32,11 +32,11 @@ namespace ThreeTierExample
             while(sdr.Read())
             {
                 int n = dataGridView1.Rows.Add();
-                dataGridView1.Rows[n].Cells[1].Value = sdr[1].ToString();
-                dataGridView1.Rows[n].Cells[2].Value = sdr[2].ToString();
-                dataGridView1.Rows[n].Cells[3].Value = sdr[3].ToString();
-                dataGridView1.Rows[n].Cells[4].Value = sdr[4].ToString();
-                dataGridView1.Rows[n].Cells[5].Value = sdr[5].ToString();
+                dataGridView1.Rows[n].Cells[1].Value = sdr["ManufID"].ToString();
+                dataGridView1.Rows[n].Cells[2].Value = sdr["ItemName"].ToString();
+                dataGridView1.Rows[n].Cells[3].Value = sdr["Carton"].ToString();
+                dataGridView1.Rows[n].Cells[4].Value = sdr["Piece"].ToString();
+                dataGridView1.Rows[n].Cells[5].Value = sdr["ShortName"].ToString();
             }
 
         }
