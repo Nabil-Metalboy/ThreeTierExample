@@ -30,6 +30,10 @@
         {
             this.btnCopy = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnFetch = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -39,13 +43,9 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_copyAll = new System.Windows.Forms.Button();
-            this.btnRemove = new System.Windows.Forms.Button();
             this.btn_removeAll = new System.Windows.Forms.Button();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnRemove = new System.Windows.Forms.Button();
+            this.btn_copyAll = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -74,9 +74,31 @@
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Right;
             this.dataGridView2.Location = new System.Drawing.Point(718, 0);
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView2.Size = new System.Drawing.Size(566, 609);
             this.dataGridView2.TabIndex = 2;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            this.dataGridView2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseClick);
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "Manuf Name";
+            this.Column10.Name = "Column10";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Item Name";
+            this.Column6.Name = "Column6";
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Carton";
+            this.Column7.Name = "Column7";
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Piece";
+            this.Column8.Name = "Column8";
             // 
             // btnFetch
             // 
@@ -155,14 +177,15 @@
             this.panel1.Size = new System.Drawing.Size(136, 609);
             this.panel1.TabIndex = 4;
             // 
-            // btn_copyAll
+            // btn_removeAll
             // 
-            this.btn_copyAll.Location = new System.Drawing.Point(28, 255);
-            this.btn_copyAll.Name = "btn_copyAll";
-            this.btn_copyAll.Size = new System.Drawing.Size(75, 23);
-            this.btn_copyAll.TabIndex = 4;
-            this.btn_copyAll.Text = ">>";
-            this.btn_copyAll.UseVisualStyleBackColor = true;
+            this.btn_removeAll.Location = new System.Drawing.Point(28, 371);
+            this.btn_removeAll.Name = "btn_removeAll";
+            this.btn_removeAll.Size = new System.Drawing.Size(75, 23);
+            this.btn_removeAll.TabIndex = 6;
+            this.btn_removeAll.Text = "<<";
+            this.btn_removeAll.UseVisualStyleBackColor = true;
+            this.btn_removeAll.Click += new System.EventHandler(this.btn_removeAll_Click);
             // 
             // btnRemove
             // 
@@ -172,35 +195,17 @@
             this.btnRemove.TabIndex = 5;
             this.btnRemove.Text = "<";
             this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
-            // btn_removeAll
+            // btn_copyAll
             // 
-            this.btn_removeAll.Location = new System.Drawing.Point(28, 371);
-            this.btn_removeAll.Name = "btn_removeAll";
-            this.btn_removeAll.Size = new System.Drawing.Size(75, 23);
-            this.btn_removeAll.TabIndex = 6;
-            this.btn_removeAll.Text = "<<";
-            this.btn_removeAll.UseVisualStyleBackColor = true;
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "Manuf Name";
-            this.Column10.Name = "Column10";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Item Name";
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Carton";
-            this.Column7.Name = "Column7";
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Piece";
-            this.Column8.Name = "Column8";
+            this.btn_copyAll.Location = new System.Drawing.Point(28, 255);
+            this.btn_copyAll.Name = "btn_copyAll";
+            this.btn_copyAll.Size = new System.Drawing.Size(75, 23);
+            this.btn_copyAll.TabIndex = 4;
+            this.btn_copyAll.Text = ">>";
+            this.btn_copyAll.UseVisualStyleBackColor = true;
+            this.btn_copyAll.Click += new System.EventHandler(this.btn_copyAll_Click);
             // 
             // Transfer_Window
             // 

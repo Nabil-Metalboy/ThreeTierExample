@@ -40,19 +40,26 @@ namespace ThreeTierExample
 
         private void homeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Do You Want To Go Back To Home Page", "Return Home",
-               MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (sd == null || tw == null)
-            {
-                sd.ShowDialog();
-                tw.ShowDialog();
-            }
-            else
-                sd.Close();
-                tw.Close();
+            //MessageBox.Show("Do You Want To Go Back To Home Page", "Return Home",
+            //   MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+           
+            //if (sd != null)
+            //{
+            //    sd.Activate();
+
+            //}
+            //else if (tw != null)
+            //{
+            //    tw.Activate();
+            //}
+            //else if (sd == null)
+            //    sd.Close();
+            //else if (tw == null)
+            //    tw.Close();
+                
         }
 
-        
+
 
         private void transferToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -73,13 +80,13 @@ namespace ThreeTierExample
 
         private void sd_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //sd = null;
+            sd = null;
             //tw = null;
             //throw new NotImplementedException();
         }
         private void tw_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //tw = null;
+            tw = null;
             //tw = null;
             //throw new NotImplementedException();
         }

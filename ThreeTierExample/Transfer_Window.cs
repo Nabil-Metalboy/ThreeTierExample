@@ -71,12 +71,55 @@ namespace ThreeTierExample
                     dataGridView2.Rows[n].Cells[2].Value = item.Cells[3].Value.ToString();
                     dataGridView2.Rows[n].Cells[3].Value = item.Cells[4].Value.ToString();
                 }
+                
             }
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btn_copyAll_Click(object sender, EventArgs e)
+        {
+            //int n = 0;
+            dataGridView2.Rows.Clear();
+
+            foreach (DataGridViewRow item in dataGridView1.Rows)
+            {
+                do
+                {
+                    int n = dataGridView2.Rows.Add();
+                    dataGridView2.Rows[n].Cells[0].Value = item.Cells[1].Value.ToString();
+                    dataGridView2.Rows[n].Cells[1].Value = item.Cells[2].Value.ToString();
+                    dataGridView2.Rows[n].Cells[2].Value = item.Cells[3].Value.ToString();
+                    dataGridView2.Rows[n].Cells[3].Value = item.Cells[4].Value.ToString();
+
+                } while ((bool)item.Cells[0].Value == true);
+
+            }
+
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            Int32 selectedRowCount = dataGridView2.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            if(selectedRowCount>0)
+            {
+                for(int i  = 0;i<selectedRowCount;i++)
+                {
+                    dataGridView2.Rows.RemoveAt(dataGridView2.SelectedRows[0].Index);
+                }
+            }
+
+        }
+
+        private void btn_removeAll_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow item in dataGridView2.Rows)
+            {
+                dataGridView2.Rows.Clear();
+            }
         }
     }
 }
